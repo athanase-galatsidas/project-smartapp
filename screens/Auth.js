@@ -1,13 +1,15 @@
 import React from 'react';
-import { Text, View, TextInput } from 'react-native';
+import { Text, View, TextInput, Image, Dimensions } from 'react-native';
 import { AuthSession } from 'expo';
 import * as SecureStore from 'expo-secure-store';
+import * as WebBrowser from 'expo-web-browser';
 
 import styles from '../styles/styles';
 
 import Header from '../components/Header';
 import StatusBar from '../components/StatusBar';
 import Button from '../components/Button';
+import ImgButton from '../components/ImgButton';
 import LinkButton from '../components/LinkButton';
 
 const CLIENT_ID = 'wLXGIHOihoabTQ';
@@ -49,22 +51,38 @@ const handleAuthAsync = async () => {
 		});
 };
 
-const Auth = () => {
+const Auth = ({ navigation }) => {
 	return (
 		<View style={styles.container}>
 			<StatusBar />
-			<Text style={styles.title}>Log in using Reddit</Text>
-			<View style={styles.inputGroup}>
-				<Button
-					text="Login"
+			<Image
+				source={require('../assets/background.png')}
+				style={{
+					opacity: 0.3,
+					width: Math.round(Dimensions.get('window').width),
+					height: 240,
+					position: 'absolute'
+				}}
+			/>
+			<Text style={styles.title}>Welcome!</Text>
+			<View style={[styles.inputGroup, styles.center]}>
+				<ImgButton
+					source={require('../assets/reddit/logo_alt.png')}
+					text="Login with Reddit"
 					onPress={() => {
-						handleAuthAsync();
+						handleAuthAsync(navigation);
+					}}
+				/>
+				<Button
+					text="Sign up"
+					onPress={() => {
+						WebBrowser.openBrowserAsync('https://www.reddit.com/');
 					}}
 				/>
 				<LinkButton
 					text="skip"
 					onPress={() => {
-						alert('skip button');
+						navigation.navigate('Feed');
 					}}
 				/>
 			</View>

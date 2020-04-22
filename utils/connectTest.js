@@ -6,6 +6,10 @@ console.log('testing');
 // auth link
 // https://www.reddit.com/api/v1/authorize.compact?client_id=CLIENT_ID&response_type=TYPE&state=RANDOM_STRING&redirect_uri=URI&scope=SCOPE_STRING
 
+// test account
+// DemoAccount32
+// Pp1234!
+
 const CLIENT_ID = 'wLXGIHOihoabTQ';
 const TYPE = '';
 const RANDOM_STRING = '';

@@ -10,7 +10,13 @@ const styles = StyleSheet.create({
 		backgroundColor: colors.dark1
 	},
 	horizontal: {
-		flexDirection: 'row'
+		flexDirection: 'row',
+		alignContent: 'center',
+		alignItems: 'center'
+	},
+	center: {
+		flex: 1,
+		justifyContent: 'center'
 	},
 	statusBar: {
 		backgroundColor: colors.dark0,
@@ -77,6 +83,10 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		color: colors.dark0,
 		textAlign: 'center'
+	},
+	submitImage: {
+		width: 64,
+		height: 64
 	},
 	cancel: {
 		marginTop: 0

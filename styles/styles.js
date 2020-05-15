@@ -1,8 +1,10 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { StatusBar } from 'react-native';
+import { StyleSheet, StatusBar, Dimensions } from 'react-native';
 
 import colors from './colors';
+
+const screenWidth = Dimensions.get('window').width;
+const screenHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
 	container: {
@@ -17,6 +19,13 @@ const styles = StyleSheet.create({
 	center: {
 		flex: 1,
 		justifyContent: 'center'
+	},
+	box: {
+		borderColor: colors.light0,
+		borderWidth: 1,
+		margin: 16,
+		padding: 16,
+		borderRadius: 4
 	},
 	statusBar: {
 		backgroundColor: colors.dark0,
@@ -50,8 +59,8 @@ const styles = StyleSheet.create({
 	},
 
 	inputGroup: {
-		marginLeft: 32,
-		marginRight: 32,
+		marginLeft: 17,
+		marginRight: 17,
 		marginTop: 32,
 		marginBottom: 32
 	},
@@ -97,32 +106,15 @@ const styles = StyleSheet.create({
 		textAlign: 'center'
 	},
 
-	itemContainer: {
-		backgroundColor: colors.dark2,
-		padding: 8,
-		margin: 16,
-		marginBottom: 0,
-		borderRadius: 4
-	},
-	itemTitle: {
-		fontSize: 20,
-		color: colors.light0
-	},
-	itemFooter: {
-		borderTopColor: colors.dark0,
-		marginLeft: -8,
-		marginRight: -8,
-		marginTop: 8,
-		padding: 8,
-		paddingBottom: 0,
-		borderTopWidth: 1,
+	bottomTab: {
+		position: 'absolute',
+		bottom: 0,
 		flexDirection: 'row',
-		justifyContent: 'space-between'
-	},
-	itemFooterItem: {
-		color: colors.light0,
-		width: 64,
-		textAlign: 'center'
+		alignContent: 'center',
+		alignItems: 'center',
+		justifyContent: 'space-around',
+		backgroundColor: colors.dark3,
+		width: screenWidth
 	}
 });
 

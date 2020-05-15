@@ -4,18 +4,17 @@ import { Text, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/styles';
 import buttons from '../styles/buttons';
 
-const ImgButton = (props) => {
+const ImgButtonSmall = (props) => {
 	return (
 		<TouchableOpacity
 			style={[
-				buttons.base,
-				buttons.submit,
+				buttons.square,
 				styles.horizontal,
-				{ backgroundColor: props.color, borderColor: props.color }
+				{ backgroundColor: props.color, borderRadius: props.round }
 			]}
 			onPress={props.onPress}
 		>
-			<Image source={props.source} style={buttons.image} />
+			<Image source={props.source} style={buttons.imageMed} />
 			{props.text ? (
 				<Text
 					style={[
@@ -30,4 +29,4 @@ const ImgButton = (props) => {
 	);
 };
 
-export default ImgButton;
+export default ImgButtonSmall;
